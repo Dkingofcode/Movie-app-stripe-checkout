@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import SignupScreen from './SignupScreen';
+import "./LoginScreen.css";
+
 
 const LoginScreen = () => {
   const [signIn, setSignIn]  = useState(false);
@@ -8,7 +10,7 @@ const LoginScreen = () => {
   return (
     <div className="LoginScreen">
       <div className='LoginScreen__background'>
-        <img className='LoginScreen__logo' src="" alt="" />
+        <img className='LoginScreen__logo' src="https://pngimg.com/uploads/netflix/netflix_PNG17.png" alt="" />
         <button className='LoginScreen__button'>Sign In</button>
 
         <div className='LoginScreen__gradient' />
@@ -26,7 +28,7 @@ const LoginScreen = () => {
            <div className='LoginScreen__input'>
              <form>
               <input type='email' placeholder="Email Address" />
-                <button className='LoginScreen__getStarted'>GET STARTED</button>
+                <button onClick={() => setSignIn(true)} className='LoginScreen__getStarted'>GET STARTED</button>
              </form>
            </div>
             </>

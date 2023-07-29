@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
-import { getAuth, createUserWithEmailAndPassword }  from "../firebase";
+import { auth }  from "../firebase";
 import "./SignupScreen.css";
-
+//import { FirebaseApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignupScreen = () => {
   const auth = getAuth();
