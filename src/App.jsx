@@ -8,12 +8,32 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import { onAuthStateChanged } from 'firebase/auth';
 import HomeScreen from './HomeScreen';
 import LoginScreen from './screen/LoginScreen';
 import SignupScreen from './screen/SignupScreen';
+import { useDispatch } from "react-redux";
+import { logout } from "./features/userSlice";
+
 
 function App() {
   const user = null;
+   const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged((userAuth) => {
+      if(userAuth){
+        console.log(userAuth);
+      } else{
+        // Logged out
+        dispatch(logout);
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+   
 
   return (
     <>
