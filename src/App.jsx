@@ -14,7 +14,7 @@ import LoginScreen from './screen/LoginScreen';
 import SignupScreen from './screen/SignupScreen';
 import { useDispatch, useSelector } from "react-redux";
 import { logout, login, selectUser } from "./features/userSlice";
-
+import ProfileScreen from './screen/ProfileScreen';
 
 function App() {
   const auth = getAuth();
@@ -51,9 +51,7 @@ function App() {
          <LoginScreen />
        ) : (
         <Routes>
-          <Route path="/profile">
-            <ProfileScreen />
-          </Route>
+          <Route path="/profile" element={<ProfileScreen />}  />
         <Route path="/*" element={<HomeScreen />} />
       </Routes>
        )}
